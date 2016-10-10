@@ -89,10 +89,6 @@ alias gpr='git pull --rebase --stat'
 alias gg='git grep -i -I -n --color -e '
 alias git-scoreboard="git shortlog -n -s -e"
 alias gf='git fetch && git fetch --tags'
-alias branches="!git for-each-ref --sort=committerdate refs/heads/ --format='\
-%(HEAD) %(color:yellow)%(refname:short)%(color:reset)|\
-%(color:bold red)%(objectname:short) %(color:bold green)(%(committerdate:relative)) %(color:blue)%(authorname) %(color:reset)%(color:yellow)%(upstream:track)%0a\
-%(color:black) %(color:reset)|%(contents:subject)' | column -ts '|' | less '--tabs=4 --quit-if-one-screen --RAW-CONTROL-CHARS --no-init'"
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/Users/mmillstein/.vimpkg/bin
 
