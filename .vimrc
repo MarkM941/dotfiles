@@ -68,8 +68,8 @@ set backspace=indent,eol,start
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " move to beginning/end of line
-nnoremap B ^
-nnoremap E $
+onoremap B ^
+onoremap E $
 
 " $/^ doesn't do anything to train me to use new binds
 nnoremap $ <nop>
@@ -79,3 +79,9 @@ nnoremap ^ <nop>
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>ez :vsp ~/.zshrc<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
+
+" Set location for swap files
+set directory^=$home/.vim/swap//
+
+" Map gundo
+noremap gu :GundoToggle<CR>
