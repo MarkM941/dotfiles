@@ -14,7 +14,7 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'yggdroot/indentline'
 Plugin 'scrooloose/syntastic'
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-repeat'
@@ -24,6 +24,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'mileszs/ack.vim'
 Plugin 'sjl/gundo.vim'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()        
 filetype plugin indent on
@@ -35,12 +37,15 @@ set tabstop=2
 set shiftwidth=2
 set hidden
 set showcmd
+set cursorline
 
-" Open NerdTree in all tabs
-let g:nerdtree_tabs_open_on_console_startup=1
+" Map leader
+let mapleader = "\<Space>"
+nnoremap <Leader>o :CtrlP<CR>
 
 " Goto file in project view
 nmap ,n :NERDTreeFind<CR>
+nnoremap gn :NERDTreeToggle<CR>
 
 " I dont remember
 autocmd StdinReadPre * let s:std_in=1
@@ -70,6 +75,8 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " move to beginning/end of line
 onoremap B ^
 onoremap E $
+nnoremap B ^
+nnoremap E $
 
 " $/^ doesn't do anything to train me to use new binds
 nnoremap $ <nop>
@@ -85,3 +92,6 @@ set directory^=$home/.vim/swap//
 
 " Map gundo
 noremap gu :GundoToggle<CR>
+
+" Map *
+nnoremap <leader>f *
