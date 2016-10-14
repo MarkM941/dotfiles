@@ -14,7 +14,6 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'yggdroot/indentline'
 Plugin 'scrooloose/syntastic'
-"Plugin 'ervandew/supertab'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-repeat'
@@ -26,6 +25,8 @@ Plugin 'mileszs/ack.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'scrooloose/nerdcommenter'
 
 call vundle#end()        
 filetype plugin indent on
@@ -49,7 +50,7 @@ nnoremap gn :NERDTreeToggle<CR>
 
 " I dont remember
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Let me Ack instead of Ack!
 cnoreabbrev Ack Ack!
@@ -88,10 +89,20 @@ nnoremap <leader>ez :vsp ~/.zshrc<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " Set location for swap files
-set directory^=$home/.vim/swap//
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
 
 " Map gundo
 noremap gu :GundoToggle<CR>
 
 " Map *
 nnoremap <leader>f *
+
+" eslint stuff
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
+
+" Set ctrlp to use filename   
+let g:ctrlp_by_filename = 1
+" Set ctrl to display 15 results instead of 10
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:15,results:15'

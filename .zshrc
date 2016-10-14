@@ -93,5 +93,5 @@ alias gf='git fetch && git fetch --tags'
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/Users/mmillstein/.vimpkg/bin
 
 alias vim='/usr/local/bin/vim'
-
-export EDITOR=/usr/bin/vim
+export VISUAL=vim
+export EDITOR="$VISUAL"
