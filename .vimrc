@@ -8,7 +8,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-sleuth'
 Plugin 'jiangmiao/auto-pairs'
@@ -22,11 +21,12 @@ Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'mileszs/ack.vim'
-Plugin 'sjl/gundo.vim'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'chriskempson/base16-vim'
+Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()        
 filetype plugin indent on
@@ -40,6 +40,9 @@ set hidden
 set showcmd
 set cursorline
 
+" Color scheme (uses tomorrow-dark)
+colorscheme base16-default-dark
+
 " Map leader
 let mapleader = "\<Space>"
 nnoremap <Leader>o :CtrlP<CR>
@@ -50,11 +53,15 @@ nnoremap gn :NERDTreeToggle<CR>
 
 " I dont remember
 autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Let me Ack instead of Ack!
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
+
+" Stop needing to capitalize fugitive commands
+cnoreabbrev gs Gstatus
+cnoreabbrev gc Gcommit
+cnoreabbrev gpush Gpush
 
 "======================================
 "   JAVASCRIPT SYNTAX
@@ -92,9 +99,6 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 
-" Map gundo
-noremap gu :GundoToggle<CR>
-
 " Map *
 nnoremap <leader>f *
 
@@ -104,5 +108,9 @@ let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
 " Set ctrlp to use filename   
 let g:ctrlp_by_filename = 1
+
+" ignore node_modules
+set wildignore+=*/node_modules/*
+
 " Set ctrl to display 15 results instead of 10
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:15,results:15'
