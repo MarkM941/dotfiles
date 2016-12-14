@@ -89,9 +89,16 @@ alias gpr='git pull --rebase --stat'
 alias gg='git grep -i -I -n --color -e '
 alias git-scoreboard="git shortlog -n -s -e"
 alias gf='git fetch && git fetch --tags'
+alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/Users/mmillstein/.vimpkg/bin
 
 alias vim='/usr/local/bin/vim'
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.suo
+
+alias mvndeps='mvn dependency:analyze -DoutputXML=true'
+

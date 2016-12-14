@@ -27,6 +27,7 @@ Plugin 'ternjs/tern_for_vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'chriskempson/base16-vim'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()        
 filetype plugin indent on
@@ -39,6 +40,7 @@ set shiftwidth=2
 set hidden
 set showcmd
 set cursorline
+set clipboard=unnamed
 
 " Color scheme (uses tomorrow-dark)
 colorscheme base16-default-dark
@@ -85,6 +87,8 @@ onoremap B ^
 onoremap E $
 nnoremap B ^
 nnoremap E $
+vnoremap B ^
+vnoremap E $
 
 " $/^ doesn't do anything to train me to use new binds
 nnoremap $ <nop>
@@ -114,3 +118,7 @@ set wildignore+=*/node_modules/*
 
 " Set ctrl to display 15 results instead of 10
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:15,results:15'
+
+" Dislpay airline with only one tab doesn't seem to work
+let g:airline#extensions#tabline#enabled = 1
+
