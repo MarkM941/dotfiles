@@ -42,7 +42,7 @@ set showcmd
 set cursorline
 set clipboard=unnamed
 
-" Color scheme (uses tomorrow-dark)
+" Color scheme (uses tomorrownight-dark)
 colorscheme base16-default-dark
 
 " Map leader

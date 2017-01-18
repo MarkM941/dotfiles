@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/mmillstein/.oh-my-zsh
+export ZSH=/Users/Mark/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -98,7 +98,10 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.suo
+source /usr/local/bin/virtualenvwrapper.sh
 
 alias mvndeps='mvn dependency:analyze -DoutputXML=true'
 
+bindkey -e
+bindkey '^[[1;9C' forward-word
+bindkey '^[[1;9D' backward-word
