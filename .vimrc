@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'tpope/vim-surround'
@@ -21,13 +21,14 @@ Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'mileszs/ack.vim'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'chriskempson/base16-vim'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'kchmck/vim-coffee-script'
+"Plugin 'kchmck/vim-coffee-script'
+Plugin 'Chiel92/vim-autoformat'
 
 call vundle#end()        
 filetype plugin indent on
@@ -35,6 +36,7 @@ filetype plugin indent on
 " Default vim sutff
 syntax on
 set relativenumber
+set number
 set tabstop=2
 set shiftwidth=2
 set hidden
@@ -122,3 +124,7 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:15,results:15'
 " Dislpay airline with only one tab doesn't seem to work
 let g:airline#extensions#tabline#enabled = 1
 
+" Disable Markdown folding
+let g:vim_markdown_folding_disabled = 1
+
+set nowrap
